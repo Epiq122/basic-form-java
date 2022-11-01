@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign Up</title>
+	<link rel="stylesheet" th:href="@{/form-stylesheet.css}">
+</head>
+<body>
+	<div class="container">
+		<h2>Javagram</h2>
+		<form method="post" th:action="@{/submitItem}" th:object="${user}">
+			<p style="color: red" th:errors="*{firstName}"></p>
+			<input placeholder="First Name" th:field="*{firstName}" type="text">
+			<p style="color: red" th:errors="*{lastName}"></p>
+			<input placeholder="Last Name" th:field="*{lastName}" type="text">
+			<p style="color: red" th:errors="*{userName}"></p>
+			<input placeholder="Username" th:field="*{userName}" type="text">
+			<p style="color: red" th:errors="*{email}"></p>
+			<input placeholder="Email" th:field="*{email}" type="text">
+			<p style="color: red" th:errors="*{dateOfBirth}"></p>
+			<p style="font-weight:bold">Date of Birth</p>
+			<input th:field="*{dateOfBirth}" type="date">
+			<br>
+			<br>
+			<input type="submit" value="Submit">
+
+		</form>
+	</div>
+</body>
+</html>
